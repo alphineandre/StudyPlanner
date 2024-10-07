@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MyClassLibrary.CourseInfo>
+
+@{
+    ViewBag.Title = "Courses";
+}
+
+<h2>Courses</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Course Name</th>
+            <th scope="col">Course Code</th>
+            <th scope="col">Number Of Credit</th>
+            <th scope="col">Number Of Classes Per Week</th>
+            <th scope="col">Number Of Weeks</th>
+            <th scope="col">Semester Start Date</th>
+            <th scope="col">Semester End Date</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.courseName</td>
+                <td>@x.courseCode</td>
+                <td>@x.numberOfCredit</td>
+                <td>@x.numberOfClassHoursPerWeek</td>
+                <td>@x.numberOfWeeks</td>
+                <td>@x.startDate</td>
+                <td>@x.endDate</td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Add", "Course", "Course")
+</div>
